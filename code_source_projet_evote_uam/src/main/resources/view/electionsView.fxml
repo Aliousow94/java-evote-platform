@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.ElectionController" spacing="20" styleClass="content-area">
+
+    <Label text="Gestion des Élections" styleClass="dashboard-title"/>
+
+    <VBox spacing="10">
+
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Button text="🔓 Ouvrir" styleClass="btn-primary" onAction="#handleOuvrirElection"/>
+            <Button text="🔒 Fermer" styleClass="btn-cancel" onAction="#handleFermerElection"/>
+            <Button text="📊 Résultats" styleClass="btn-primary" onAction="#handleShowResults"/>
+            <Button text="✏️ Modifier" styleClass="btn-primary" onAction="#handleEditElection"/>
+            <Button text="🗑️ Supprimer" styleClass="btn-cancel" onAction="#handleDeleteElection"/>
+        </HBox>
+
+
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <Button text="+ Créer une élection" styleClass="btn-primary" onAction="#handleAddElection"/>
+        </HBox>
+    </VBox>
+
+    <TableView fx:id="electionsTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="40"/>
+            <TableColumn fx:id="titreColumn" text="Titre" prefWidth="180"/>
+            <TableColumn fx:id="typeColumn" text="Type" prefWidth="120"/>
+            <TableColumn fx:id="dateDebutColumn" text="Date Début" prefWidth="130"/>
+            <TableColumn fx:id="statutColumn" text="Statut" prefWidth="100"/>
+            <TableColumn fx:id="roleColumn" text="Rôle" prefWidth="90"/>
+            <TableColumn fx:id="ufrColumn" text="UFR" prefWidth="90"/>
+            <TableColumn fx:id="departementColumn" text="Département" prefWidth="100"/>
+            <TableColumn fx:id="classeColumn" text="Classe" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+</VBox>

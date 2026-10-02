@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.AddElectionController" stylesheets="@../css/style.css"
+      spacing="15" styleClass="login-card" prefWidth="500" prefHeight="650" alignment="CENTER">
+
+    <Text fx:id="titleLabel" text="Nouvelle Élection" styleClass="titre"/>
+
+    <TextField fx:id="titreField" promptText="Titre (ex: Élection Délégué L3 Info)" styleClass="field"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Type :" prefWidth="100"/>
+        <ComboBox fx:id="typeCombo" prefWidth="300" styleClass="field"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Début :" prefWidth="100"/>
+        <DatePicker fx:id="dateDebutPicker" prefWidth="300" styleClass="field"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Fin :" prefWidth="100"/>
+        <DatePicker fx:id="dateFinPicker" prefWidth="300" styleClass="field"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Statut :" prefWidth="100"/>
+        <ComboBox fx:id="statutCombo" prefWidth="300" styleClass="field"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Cible :" prefWidth="100"/>
+        <ComboBox fx:id="cibleCombo" prefWidth="300" styleClass="field"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="UFR :" prefWidth="100"/>
+        <ComboBox fx:id="ufrCombo" prefWidth="300" styleClass="field"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Département :" prefWidth="100"/>
+        <ComboBox fx:id="departementCombo" prefWidth="300" styleClass="field"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Classe :" prefWidth="100"/>
+        <ComboBox fx:id="classeCombo" prefWidth="300" styleClass="field"/>
+    </HBox>
+
+    <Label fx:id="errorLabel" text="" textFill="red" visible="false"/>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Enregistrer" styleClass="btn-primary" onAction="#handleSave"/>
+        <Button text="Annuler" styleClass="btn-cancel" onAction="#handleCancel"/>
+    </HBox>
+
+</VBox>

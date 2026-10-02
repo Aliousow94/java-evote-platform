@@ -1,0 +1,158 @@
+/* Fond global de l'application */
+.root {
+    -fx-background-color: white;
+}
+
+/* Carte de connexion (Orange très clair) */
+.login-card {
+    -fx-background-color: #FDF2E9;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-padding: 40px;
+}
+
+/* Titre principal */
+.titre {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E67E22;
+}
+
+/* Champs de texte et mots de passe */
+.field {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #E67E22;
+    -fx-border-radius: 8px;
+    -fx-padding: 10px;
+}
+
+/* Bouton principal (Orange) */
+.btn-primary {
+    -fx-background-color: #E67E22;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 20px;
+}
+
+/* Effet de survol du bouton (Orange foncé) */
+.btn-primary:hover {
+    -fx-background-color: #D35400;
+}
+
+
+
+/* Menu latéral orange */
+.sidebar {
+    -fx-background-color: #E67E22;
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+}
+
+/* Boutons du menu latéral */
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-alignment: BASELINE_LEFT;
+    -fx-padding: 10px;
+    -fx-border-width: 0;
+}
+
+/* Effet de survol des boutons du menu latéral */
+.sidebar-btn:hover {
+    -fx-background-color: #D35400;
+    -fx-background-radius: 8px;
+}
+
+/* Zone de contenu principale (à droite) */
+.content-area {
+    -fx-background-color: white;
+    -fx-padding: 20px;
+}
+
+/* Titre du tableau de bord */
+.dashboard-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E67E22;
+}
+/* Cartes blanches pour le tableau de bord */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
+    -fx-padding: 15px;
+    -fx-spacing: 5px;
+}
+
+.stat-card {
+    -fx-background-color: #FDF2E9;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
+    -fx-padding: 15px;
+}
+
+
+
+/* === Style du TableView (Tableau des utilisateurs) === */
+
+/* Fond et bordure du tableau */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #E67E22;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+/* En-tête des colonnes (Orange) */
+.table-view .column-header-background {
+    -fx-background-color: #E67E22;
+    -fx-background-radius: 8px 8px 0 0; /* Arrondi seulement en haut */
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Lignes du tableau */
+.table-row-cell {
+    -fx-cell-size: 40px;
+    -fx-border-color: #f0f0f0;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Effet de survol sur les lignes (Orange très clair) */
+.table-row-cell:hover {
+    -fx-background-color: #FDF2E9;
+}
+
+/* Ligne sélectionnée (Orange foncé) */
+.table-row-cell:selected {
+    -fx-background-color: #D35400;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: white;
+}
+
+
+
+/* Bouton secondaire (Gris/Blanc) */
+.btn-cancel {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 20px;
+}
+.btn-cancel:hover {
+    -fx-background-color: #95a5a6;
+}

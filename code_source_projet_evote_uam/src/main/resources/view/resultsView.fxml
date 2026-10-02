@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.ResultsController" stylesheets="@../css/style.css"
+      spacing="20" styleClass="content-area" prefWidth="800" prefHeight="550" alignment="CENTER">
+
+    <Text fx:id="electionTitle" text="Résultats" styleClass="titre"/>
+
+    <!-- HBox pour mettre les deux graphiques côte à côte -->
+    <HBox spacing="20" alignment="CENTER" VBox.vgrow="ALWAYS">
+
+        <!-- 1. Graphique des résultats (PieChart) -->
+        <VBox spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+            <Text text="Répartition des voix" style="-fx-font-weight: bold; -fx-fill: #E67E22;"/>
+            <PieChart fx:id="resultsPieChart" prefWidth="350" prefHeight="350"/>
+        </VBox>
+
+        <!-- 2. Graphique de participation (BarChart) -->
+        <VBox spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+            <Text text="Taux de participation" style="-fx-font-weight: bold; -fx-fill: #E67E22;"/>
+            <BarChart fx:id="participationBarChart" prefWidth="350" prefHeight="350">
+                <xAxis><CategoryAxis fx:id="xAxis" label="Statut" /></xAxis>
+                <yAxis><NumberAxis fx:id="yAxis" label="Nombre" tickUnit="1" /></yAxis>
+            </BarChart>
+        </VBox>
+
+    </HBox>
+
+    <Label fx:id="winnerLabel" text="" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #E67E22;"/>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="📄 Exporter en PDF" styleClass="btn-primary" onAction="#handleExportPDF"/>
+        <Button text="📊 Exporter en CSV" styleClass="btn-cancel" onAction="#handleExportCSV"/>
+        <Button text="Fermer" styleClass="btn-cancel" onAction="#handleClose"/>
+    </HBox>
+
+</VBox>

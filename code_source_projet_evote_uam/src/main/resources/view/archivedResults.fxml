@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.ArchivedResultsController" spacing="20" styleClass="content-area">
+
+    <Label text="Résultats des anciennes élections" styleClass="dashboard-title"/>
+
+    <TableView fx:id="archivedTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="titreColumn" text="Titre de l'élection" prefWidth="300"/>
+            <TableColumn fx:id="typeColumn" text="Type" prefWidth="150"/>
+            <TableColumn fx:id="dateFinColumn" text="Clôturée le" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <HBox alignment="CENTER_RIGHT">
+        <Button text="📊 Voir les résultats" styleClass="btn-primary" onAction="#handleShowResults"/>
+    </HBox>
+
+</VBox>

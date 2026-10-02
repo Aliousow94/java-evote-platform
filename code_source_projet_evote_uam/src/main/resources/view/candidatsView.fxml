@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.CandidatController" spacing="20" styleClass="content-area">
+
+    <Label text="Gestion des Candidats" styleClass="dashboard-title"/>
+
+    <HBox alignment="CENTER_RIGHT" spacing="15">
+        <Button text="+ Ajouter" styleClass="btn-primary" onAction="#handleAddCandidat"/>
+        <Button text="✏️ Modifier" styleClass="btn-primary" onAction="#handleEditCandidat"/>
+        <Button text="🗑️ Supprimer" styleClass="btn-cancel" onAction="#handleDeleteCandidat"/>
+    </HBox>
+
+    <TableView fx:id="candidatsTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="electionIdColumn" text="ID Élection" prefWidth="100"/>
+
+            <TableColumn fx:id="nomColumn" text="Nom" prefWidth="120"/>
+            <TableColumn fx:id="prenomColumn" text="Prénom" prefWidth="120"/>
+            <TableColumn fx:id="professionColumn" text="Profession" prefWidth="150"/>
+            <TableColumn fx:id="programmeColumn" text="Programme" prefWidth="200"/>
+
+        </columns>
+    </TableView>
+
+</VBox>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="mainBorderPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controller.AdminDashboardController" stylesheets="@../css/style.css">
+    <!-- Menu latéral gauche (Orange) -->
+    <left>
+        <VBox styleClass="sidebar" prefWidth="200" alignment="TOP_LEFT" spacing="20">
+            <Text text="UAM e-Vote" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-fill: white;"/>
+            <Button text="📊 Statistiques" styleClass="sidebar-btn" maxWidth="Infinity" onAction="#showStatistiques"/>
+            <Button text="🗳️ Élections" styleClass="sidebar-btn" maxWidth="Infinity" onAction="#showElections"/>
+            <Button text="👥 Candidats" styleClass="sidebar-btn" maxWidth="Infinity" onAction="#showCandidats"/>
+            <Button text="👤 Utilisateurs" styleClass="sidebar-btn" maxWidth="Infinity" onAction="#showUtilisateurs"/>
+            <Button text="🚪 Déconnexion" styleClass="sidebar-btn" maxWidth="Infinity" onAction="#handleLogout"/>
+        </VBox>
+    </left>
+
+    <!-- Zone de contenu (Blanche) avec défilement -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="20">
+
+                <!-- En-tête -->
+                <HBox alignment="CENTER_LEFT" spacing="20">
+                    <Text text="Tableau de bord" styleClass="dashboard-title"/>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Label text="15 Mai 2024" style="-fx-text-fill: grey; -fx-font-weight: bold;"/>
+                </HBox>
+
+                <!-- Ligne des cartes de statistiques AVEC FX:ID -->
+                <HBox spacing="20">
+                    <VBox styleClass="stat-card" prefWidth="200">
+                        <Text text="Élections Actives" style="-fx-fill: #7f8c8d;"/>
+                        <Text fx:id="activeElectionsText" text="0" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-fill: #E67E22;"/>
+                    </VBox>
+                    <VBox styleClass="stat-card" prefWidth="200">
+                        <Text text="Électeurs Inscrits" style="-fx-fill: #7f8c8d;"/>
+                        <Text fx:id="votersText" text="0" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-fill: #E67E22;"/>
+                    </VBox>
+                    <VBox styleClass="stat-card" prefWidth="200">
+                        <Text text="Votes Enregistrés" style="-fx-fill: #7f8c8d;"/>
+                        <Text fx:id="totalVotesText" text="0" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-fill: #E67E22;"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Graphiques (BarChart et PieChart) -->
+                <HBox spacing="20">
+                    <!-- Résultats en BarChart -->
+                    <VBox styleClass="card" HBox.hgrow="ALWAYS">
+                        <Text fx:id="barChartTitle" text="Résultats de la dernière élection" style="-fx-font-weight: bold; -fx-fill: #E67E22;"/>
+                        <BarChart fx:id="resultsBarChart" prefHeight="250">
+                            <xAxis><CategoryAxis fx:id="xAxis" label="Candidats" /></xAxis>
+                            <yAxis><NumberAxis fx:id="yAxis" label="Votes (%)" /></yAxis>
+                        </BarChart>
+                    </VBox>
+
+                    <!-- Participation en PieChart -->
+                    <VBox styleClass="card" prefWidth="300">
+                        <Text text="Participation Globale" style="-fx-font-weight: bold; -fx-fill: #E67E22;"/>
+                        <PieChart fx:id="participationPieChart" prefHeight="250" />
+                    </VBox>
+                </HBox>
+
+                <!-- Bas de page (Listes) -->
+                <HBox spacing="20">
+                    <VBox styleClass="card" HBox.hgrow="ALWAYS">
+                        <Text text="Prochains Scrutins" style="-fx-font-weight: bold; -fx-fill: #E67E22;"/>
+                        <ListView fx:id="upcomingElectionsList" prefHeight="150"/>
+                    </VBox>
+                    <VBox styleClass="card" HBox.hgrow="ALWAYS">
+                        <Text text="Derniers Événements du Système" style="-fx-font-weight: bold; -fx-fill: #E67E22;"/>
+                        <ListView fx:id="eventsList" prefHeight="150"/>
+                    </VBox>
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

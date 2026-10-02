@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.AddUserController" stylesheets="@../css/style.css"
+      spacing="15" styleClass="login-card" prefWidth="450" prefHeight="550" alignment="CENTER">
+
+    <Text fx:id="titleLabel" text="Nouvel Utilisateur" styleClass="titre"/>
+
+    <TextField fx:id="matriculeField" promptText="Matricule (ex: ETU002)" styleClass="field"/>
+    <TextField fx:id="ufrField" promptText="UFR (ex: UFR STA)" styleClass="field"/>
+    <TextField fx:id="nomField" promptText="Nom" styleClass="field"/>
+    <TextField fx:id="prenomField" promptText="Prénom" styleClass="field"/>
+    <TextField fx:id="emailField" promptText="Adresse Email" styleClass="field"/>
+    <PasswordField fx:id="passwordField" promptText="Mot de passe" styleClass="field"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Rôle :" prefWidth="80"/>
+        <ComboBox fx:id="roleCombo" prefWidth="200" styleClass="field"/>
+    </HBox>
+
+    <TextField fx:id="classeField" promptText="Classe (ex: L3 Informatique) - Si Étudiant" styleClass="field"/>
+    <TextField fx:id="departementField" promptText="Département (ex: Informatique) - Si Enseignant" styleClass="field"/>
+
+    <CheckBox fx:id="habiliteCheck" text="Enseignant habilité à voter pour le Directeur d'UFR"/>
+
+    <Label fx:id="errorLabel" text="" textFill="red" visible="false"/>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Enregistrer" styleClass="btn-primary" onAction="#handleSave"/>
+        <Button text="Annuler" styleClass="btn-cancel" onAction="#handleCancel"/>
+    </HBox>
+
+</VBox>

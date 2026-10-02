@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.AddCandidatController" stylesheets="@../css/style.css"
+      spacing="15" styleClass="login-card" prefWidth="500" prefHeight="600" alignment="CENTER">
+
+    <Text fx:id="titleLabel" text="Nouveau Candidat" styleClass="titre"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Élection :" prefWidth="100"/>
+        <ComboBox fx:id="electionCombo" prefWidth="300" styleClass="field"/>
+    </HBox>
+
+    <TextField fx:id="nomField" promptText="Nom" styleClass="field"/>
+    <TextField fx:id="prenomField" promptText="Prénom" styleClass="field"/>
+    <TextField fx:id="professionField" promptText="Profession / Fonction" styleClass="field"/>
+
+    <VBox spacing="5">
+        <Label text="Programme électoral :"/>
+        <TextArea fx:id="programmeArea" prefHeight="100" wrapText="true" styleClass="field"/>
+    </VBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Photo :" prefWidth="100"/>
+        <Button text="📷 Parcourir..." styleClass="btn-cancel" onAction="#handleChoisirPhoto"/>
+        <Label fx:id="photoLabel" text="Aucune image choisie" style="-fx-text-fill: gray;" prefWidth="200"/>
+    </HBox>
+    <Label fx:id="errorLabel" text="" textFill="red" visible="false"/>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Enregistrer" styleClass="btn-primary" onAction="#handleSave"/>
+        <Button text="Annuler" styleClass="btn-cancel" onAction="#handleCancel"/>
+    </HBox>
+
+</VBox>

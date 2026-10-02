@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.UserController" spacing="20" styleClass="content-area">
+
+    <!-- Ligne 1 : Le titre seul -->
+    <Label text="Gestion des Utilisateurs" styleClass="dashboard-title"/>
+
+    <!-- Ligne 2 : Les boutons alignés à droite -->
+    <HBox alignment="CENTER_RIGHT" spacing="15">
+        <Button text="🪪 Générer Carte" styleClass="btn-primary" onAction="#handleGenerateCard"/>
+        <Button text="📁 Importer CSV" styleClass="btn-cancel" onAction="#handleImportCSV"/>
+        <Button text="+ Ajouter" styleClass="btn-primary" onAction="#handleAddUser"/>
+        <Button text="✏️ Modifier" styleClass="btn-primary" onAction="#handleEditUser"/>
+        <Button text="🗑️ Supprimer" styleClass="btn-cancel" onAction="#handleDeleteUser"/>
+    </HBox>
+
+    <TableView fx:id="usersTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="matriculeColumn" text="Matricule" prefWidth="100"/>
+            <TableColumn fx:id="nomColumn" text="Nom" prefWidth="100"/>
+            <TableColumn fx:id="prenomColumn" text="Prénom" prefWidth="100"/>
+            <TableColumn fx:id="emailColumn" text="Email" prefWidth="180"/>
+            <TableColumn fx:id="ufrColumn" text="UFR" prefWidth="100"/>
+            <TableColumn fx:id="departementColumn" text="Département" prefWidth="120"/>
+            <TableColumn fx:id="classeColumn" text="Classe" prefWidth="120"/>
+            <TableColumn fx:id="roleColumn" text="Rôle" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+</VBox>

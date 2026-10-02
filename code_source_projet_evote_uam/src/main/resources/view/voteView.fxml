@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.VoteController" stylesheets="@../css/style.css"
+      spacing="15" styleClass="content-area" prefWidth="600" prefHeight="500">
+
+    <Text fx:id="electionTitle" text="Élection" styleClass="titre"/>
+    <Text text="Sélectionnez un candidat, puis confirmez votre choix." style="-fx-fill: grey;"/>
+
+    <TableView fx:id="candidatsTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="photoColumn" text="Photo" prefWidth="90"/>
+            <TableColumn fx:id="nomColumn" text="Nom" prefWidth="100"/>
+            <TableColumn fx:id="prenomColumn" text="Prénom" prefWidth="120"/>
+            <TableColumn fx:id="professionColumn" text="Profession" prefWidth="120"/>
+            <TableColumn fx:id="programmeColumn" text="Programme" prefWidth="250"/>
+        </columns>
+    </TableView>
+
+    <Label fx:id="errorLabel" text="" textFill="red" visible="false"/>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="🗳️ Confirmer mon vote" styleClass="btn-primary" onAction="#handleConfirmerVote"/>
+        <Button text="Annuler" styleClass="btn-cancel" onAction="#handleCancel"/>
+    </HBox>
+
+</VBox>
